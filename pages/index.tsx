@@ -1,10 +1,32 @@
-import IntroTemplate from 'intro-template'
+import Link from 'next/link';
 
-export default function IndexPage() {
+const HomePage = () => {
   return (
     <>
-      {/* Start something new 💖 */}
-      <IntroTemplate />
+      <h1>Welcome to the Home Page</h1>
+      <Link href="/about">
+        go to about page
+      </Link>
     </>
-  )
-}
+  );
+};
+
+const AboutPage = () => {
+  return (
+    <>
+      <h1>About Page</h1>
+      <p>This is the about page content.</p>
+    </>
+  );
+};
+
+const IndexPage = () => {
+  return (
+    <>
+      <HomePage />
+      <AboutPage />
+    </>
+  );
+};
+
+export default IndexPage;

@@ -12,3 +12,12 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
 }
+
+@layer components {
+  ul {
+    @apply list-inside list-disc ;
+  }
+  ol {
+    @apply list-inside list-decimal;
+  }
+}
