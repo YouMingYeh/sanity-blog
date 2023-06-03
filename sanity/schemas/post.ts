@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'slug',
@@ -16,22 +16,22 @@ export default {
       options: {
         source: 'title',
         maxLength: 100,
-        slugify: (input) =>
+        slugify: (input: any) =>
           input.toLowerCase().replace(/\s+/g, '-').slice(0, 100),
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'author',
       title: 'Author',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'content',
@@ -58,13 +58,13 @@ export default {
           type: 'code',
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'publishedAt',
       title: 'Published At',
       type: 'datetime',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'coverImage',
@@ -74,6 +74,14 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'myTags',
+      title: 'Tags',
+      type: 'tags',
+      options: {
+        includeFromRelated: 'myTags'
+      }
+    }
     // Add more fields as needed
   ],
 }
